@@ -5,8 +5,8 @@ import fable.GzipExtract;
 public class Main {
 
     public static void main(String[] args) {
-        FileToGzip ftgUrl = new FileToGzip("./src/main/resources/fables.txt");
-        FileToGzip ftg = new FileToGzip("./src/main/resources/fables.txt");
+        FileToGzip ftgUrl = new FileToGzip();
+        FileToGzip ftg = new FileToGzip();
         Downloader d = new Downloader("https://www.gutenberg.org/files/11339/11339-8.txt");
         d.download("./src/main/resources/fablesUrl.txt");
 

@@ -9,11 +9,9 @@ import java.util.ArrayList;
 import java.util.zip.GZIPOutputStream;
 
 public class FileToGzip {
-    private String PathFile;
     private ArrayList<Fable> index;
 
-    public FileToGzip(String pathFile) {
-        this.PathFile = pathFile;
+    public FileToGzip() {
         this.index = new ArrayList<>();
     }
 
