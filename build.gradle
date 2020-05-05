@@ -6,6 +6,11 @@ group 'org.example'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
+jar {
+    manifest {
+        attributes 'Main-Class': 'fable.Main'
+    }
+}
 
 repositories {
     mavenCentral()

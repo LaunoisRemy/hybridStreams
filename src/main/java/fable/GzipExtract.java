@@ -1,6 +1,7 @@
 package fable;
 
 import java.io.*;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -14,13 +15,10 @@ public class GzipExtract {
      * @param sourceFileName gzip file
      * @param idfable fable name
      */
-    public  void readWithId(String sourceFileName, int idfable){
-        Path path = Paths.get("./src/main/resources/"+sourceFileName);
+    public  void readWithId(Path path,String sourceFileName, int idfable){
         try {
 
-            //InputStream fileInputStream = Files.newInputStream(path, StandardOpenOption.READ);
             InputStream fileInputStream = GzipExtract.class.getClassLoader().getResourceAsStream(sourceFileName);
-            //InputStream fileInputStream = Files.newInputStream(path, StandardOpenOption.READ);
             assert fileInputStream != null;
             BufferedInputStream bufferedfileInputStream = new BufferedInputStream(fileInputStream);
 
@@ -67,10 +65,12 @@ public class GzipExtract {
      * @param sourceFileName gzip file
      * @param fable fable name
      */
-    public void readWithName(String sourceFileName, String fable){
+    public void readWithName(Path path,String sourceFileName, String fable){
 
-        Path path = Paths.get("./src/main/resources/"+sourceFileName);
+        //URL url = this.getClass().getResource(sourceFileName);
+        //Path path = Paths.get("./src/main/resources/"+sourceFileName);
         try {
+            //Path path = Paths.get(url.toURI());
             //InputStream fileInputStream = Files.newInputStream(path, StandardOpenOption.READ);
             System.out.println(sourceFileName);
             InputStream fileInputStream = GzipExtract.class.getClassLoader().getResourceAsStream(sourceFileName);
