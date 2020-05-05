@@ -72,9 +72,8 @@ public class GzipExtract {
         try {
             //InputStream fileInputStream = Files.newInputStream(path, StandardOpenOption.READ);
             System.out.println(sourceFileName);
-            InputStream fileInputStream = GzipExtract.class.getClassLoader().getResourceAsStream("fables.gz");
-            fileInputStream.read();
-            assert fileInputStream != null;
+            InputStream fileInputStream = GzipExtract.class.getClassLoader().getResourceAsStream(sourceFileName);
+
             BufferedInputStream bufferedfileInputStream = new BufferedInputStream(fileInputStream);
 
             InputStreamReader inputStreamReader = new InputStreamReader(bufferedfileInputStream, StandardCharsets.ISO_8859_1);
